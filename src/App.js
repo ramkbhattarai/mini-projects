@@ -15,15 +15,15 @@ function App() {
 //     <Folder/> 
 //  </div >; // we can render folder function as a component by keeping it as the html element
 
-  return <div div >
-    <Folder name="mydesktop">
-      some stuffs  
-    </Folder>
-    <Folder name="myApplication"></Folder>
-    <File name="cats.jpeg"/>
-    <File name="dogs.png"></File>
+  // return <div div >
+  //   <Folder name="mydesktop">
+  //     some stuffs  
+  //   </Folder>
+  //   <Folder name="myApplication"></Folder>
+  //   <File name="cats.jpeg"/>
+  //   <File name="dogs.png"></File>
 
-  </div >; // whatever we keep in between the folder conmponets it will be regarded as childern and we can access those
+  // </div >; // whatever we keep in between the folder conmponets it will be regarded as childern and we can access those
 
 
   // return <div div >
@@ -47,19 +47,19 @@ function App() {
   // </div >;
 
 
-  // return <div>
-  //   <Folder name="mydesktop">
-  //     <Folder name="myMusic">
-  //       <File name="songs.mp4" />
-  //       <File name="sing.mp4"></File>
-  //     </Folder>
-  //     <File name="cats.jpeg" />
-  //     <File name="dogs.png"></File>
-  //   </Folder>
-  //   <Folder name="myApplication"></Folder>
+  return <div>
+    <Folder name="mydesktop">
+      <Folder name="myMusic">
+        <File name="songs.mp4" />
+        <File name="sing.mp4"></File>
+      </Folder>
+      <File name="cats.jpeg" />
+      <File name="dogs.png"></File>
+    </Folder>
+    <Folder name="myApplication"></Folder>
 
 
-  // </div >;
+  </div >;
 }
 
  const Folder = (props)=>{ // every js function is also a component in react and we can render it as the html element
