@@ -4,16 +4,16 @@ import React, {useState}from 'react';
 function App() {
  //return 'hello'; // we can render simple string from this function 
 //return <h3>hello</h3>; // we can render html elements too. 
- return <div> 
-   <h3>hi</h3>
-    <h4>hey</h4>
- </div>; // we can return html elements like this too.
-
-//   return <div div >
-//     <h3>hi</h3>
+//  return <div> 
+//    <h3>hi</h3>
 //     <h4>hey</h4>
-//     <Folder/> 
-//  </div >; // we can render folder function as a component by keeping it as the html element
+//  </div>; // we can return html elements like this too.
+
+  return <div div >
+    <h3>hi</h3>
+    <h4>hey</h4>
+    <Folder/> 
+ </div >; // we can render folder function as a component by keeping it as the html element
 
   // return <div div >
   //   <Folder name="mydesktop">
