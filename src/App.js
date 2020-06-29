@@ -9,21 +9,21 @@ function App() {
 //     <h4>hey</h4>
 //  </div>; // we can return html elements like this too.
 
+//   return <div div >
+//     <h3>hi</h3>
+//     <h4>hey</h4>
+//     <Folder/> 
+//  </div >; // we can render folder function as a component by keeping it as the html element
+
   return <div div >
-    <h3>hi</h3>
-    <h4>hey</h4>
-    <Folder/> 
- </div >; // we can render folder function as a component by keeping it as the html element
+    <Folder name="mydesktop">
+      some stuffs  
+    </Folder>
+    <Folder name="myApplication"></Folder>
+    <File name="cats.jpeg"/>
+    <File name="dogs.png"></File>
 
-  // return <div div >
-  //   <Folder name="mydesktop">
-  //     some stuffs  
-  //   </Folder>
-  //   <Folder name="myApplication"></Folder>
-  //   <File name="cats.jpeg"/>
-  //   <File name="dogs.png"></File>
-
-  // </div >; // whatever we keep in between the folder conmponets it will be regarded as childern and we can access those
+  </div >; // whatever we keep in between the folder conmponets it will be regarded as childern and we can access those
 
 
   // return <div div >
