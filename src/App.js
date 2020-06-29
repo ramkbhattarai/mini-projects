@@ -63,9 +63,9 @@ function App() {
 }
 
  const Folder = (props)=>{ // every js function is also a component in react and we can render it as the html element
-  const name = 'Destop'
-  // return <h2>name</h2>;  if we just keep name it will just print name it won't be a variable
-  return <h2>{name}</h2>; // here we enclosed with the curly brackets so it acts as js variable
+  // const name = 'Destop'
+  // // return <h2>name</h2>;  if we just keep name it will just print name it won't be a variable
+  // return <h2>{name}</h2>; // here we enclosed with the curly brackets so it acts as js variable
 
 //return <h3>{props.name}</h3> // props is analogous to passing arguments in the react component
 // here we were only rendering name of props but if we want to render all its children we can do so by
@@ -159,43 +159,43 @@ function App() {
 
 
 
-  //  const handleClick = () => {
-  //    setIsOpen(!isOpen);
-  //  }
+   const handleClick = () => {
+     setIsOpen(!isOpen);
+   }
 
-  //  const marginStyle = { marginLeft: '12px' };
-  //  const [isOpen, setIsOpen] = useState(true);
-  //  const direction  = isOpen ? 'down' : 'right';
-  //  const { name, children } = props;
-  //  return <div >
-  //    <span onClick={handleClick}>
-  //      <i className="blue folder icon"></i>
-  //      <i className={`caret ${direction} icon`}></i>
-  //    </span>
-  //    {name}
-  //    <div style={marginStyle}>
-  //      {isOpen ? children : null}
-  //    </div>
-  //  </div>;
+   const marginStyle = { marginLeft: '12px' };
+   const [isOpen, setIsOpen] = useState(true);
+   const direction  = isOpen ? 'down' : 'right';
+   const { name, children } = props;
+   return <div >
+     <span onClick={handleClick}>
+       <i className="blue folder icon"></i>
+       <i className={`caret ${direction} icon`}></i>
+     </span>
+     {name}
+     <div style={marginStyle}>
+       {isOpen ? children : null}
+     </div>
+   </div>;
 }
 
-const File = (props) =>{
-return <div>{props.name}</div>;
-}
-
-
-// const File = (props) => { // to keep the icons for mp4 and images
-//   const {name} = props;
-//  const fileExtention =  name.split(".")[1]; // this is the value that will be obtained
-//  const icons = {  // this is the object that will contain all possible values
-//     mp4: 'headphones' ,
-//     png: 'file image',
-//     jpeg:'file image outline'
-//  };
-
-//   return <div>
-//     <i className={`${icons[fileExtention]} icon`}></i>
-//     {name}</div>; // and we will key into the object with the specific value
+// const File = (props) =>{
+// return <div>{props.name}</div>;
 // }
+
+
+const File = (props) => { // to keep the icons for mp4 and images
+  const {name} = props;
+ const fileExtention =  name.split(".")[1]; // this is the value that will be obtained
+ const icons = {  // this is the object that will contain all possible values
+    mp4: 'headphones' ,
+    png: 'file image',
+    jpeg:'file image outline'
+ };
+
+  return <div>
+    <i className={`${icons[fileExtention]} icon`}></i>
+    {name}</div>; // and we will key into the object with the specific value
+}
 
 export default App;
