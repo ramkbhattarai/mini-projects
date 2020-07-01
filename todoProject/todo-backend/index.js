@@ -3,17 +3,22 @@ const app = express();
 
 
 const MongoClient = require('mongodb').MongoClient
-
-MongoClient.connect('mongodb://localhost:27017/todos',{useUnifiedTopology: true}, function (err, client) {
+let db;
+MongoClient.connect('mongodb://localhost:27017/todos',{useUnifiedTopology: true}, async function (err, client) {
     if (err) throw err
 
-    const db = client.db('todos')
+     db = client.db('todos')
+    await db.collection('todos').insertMany([
+        {done: true, description: 'write code'},
+        { done: true, description: 'fix bugs' },
+        { done: false, description: 'profit' }
+    ]);
 })
 app.get('/',(req, res)=>{
     res.json('did this work');
 });
 
-app.get('/todos', (req, res) => {
+app.get('/todos', async (req, res) => {
     const todos = await db.collection('todos').find().toArray();
     res.json(todos);
 });
