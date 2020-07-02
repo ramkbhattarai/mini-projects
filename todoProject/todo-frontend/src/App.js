@@ -27,6 +27,8 @@ const list = ()=> {
       body: JSON.stringify({description: text, done: false})
 
     });
+    fetchTodos();
+    setText("");
   }
 
   useEffect(()=>{

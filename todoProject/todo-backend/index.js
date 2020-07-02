@@ -1,8 +1,10 @@
 const express = require('express');
 const cors = require('cors');
+const bodyParser = require('body-parser')
 const app = express();
 
 app.use(cors());
+app.use(bodyParser.json());
 
 
 const MongoClient = require('mongodb').MongoClient
@@ -24,6 +26,11 @@ app.get('/',(req, res)=>{
 
 app.get('/todos', async (req, res) => {
     const todos = await db.collection('todos').find().toArray();
+    res.json(todos);
+});
+
+app.post('/todos', async (req, res) => {
+    await db.collection('todos').insertOne(req.body);
     res.json(todos);
 });
 app.listen(3001,()=>{
