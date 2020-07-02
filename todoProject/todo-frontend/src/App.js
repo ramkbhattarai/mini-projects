@@ -19,7 +19,7 @@ const list = ()=> {
   }
 
   const addTodo = async () => {
-    const res = await fetch("http://localhost:3001/todos", {
+    const res = await fetch(`http://localhost:3001/todos`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -35,7 +35,7 @@ const list = ()=> {
     fetchTodos();
   }, []);
 
-  const items = todos.map(todo => <Item todo={todo} key={todo._id} />)
+  const items = todos.map(todo => <Item todo={todo} key={todo._id} fetchTodos={fetchTodos}/>)
 
  
   return  <div className="ui card">
@@ -63,9 +63,17 @@ const list = ()=> {
 };
 
 const Item = (props)=>{
-  const {done, description} = props.todo;
+  const {done, description, _id} = props.todo;
+
+  const deleteTodo = async ()=>{
+     await fetch(`http://localhost:3001/todos/${_id}`, {
+      method: 'DELETE',
+    });
+    props.fetchTodos();
+  }
   return <div className="item">
     {description}
+    <i className="right floated red trash icon" onClick={deleteTodo}></i>
   </div>
 }
 export default App;
